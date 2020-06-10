@@ -1,0 +1,16 @@
+{
+  "name": "dwarfempireserver",
+  "version": "1.0.0",
+  "description": "Dwarf Empire server to store data from users",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "author": "agar3s",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.18"
+  },
+  "engines": {
+    "node": "12.x"
+  }
+}
