@@ -5,7 +5,7 @@ mongoose.Promise = global.Promise
 
 const GameSchema = new Schema({
   id: { type: String, required: true, unique: true },
-  money: { type: String, required: true },
+  game: { type: Object },
   businesses: { type: Object },
 })
 
