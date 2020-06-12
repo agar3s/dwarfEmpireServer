@@ -1,0 +1,109 @@
+@font-face {
+	font-family: 'CalvertMT';
+    src: url('https://agar3s-assets.s3.amazonaws.com/dwarfEmpire/assets/fonts/CalvertMT.woff2') format('woff2'),
+         url('https://agar3s-assets.s3.amazonaws.com/dwarfEmpire/assets/fonts/CalvertMT.woff') format('woff'),
+         url('https://agar3s-assets.s3.amazonaws.com/dwarfEmpire/assets/fonts/CalvertMT.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+	font-family: 'CalvertMT-Bold';
+    src: url('https://agar3s-assets.s3.amazonaws.com/dwarfEmpire/assets/fonts/CalvertMTStd-Bold.woff') format('woff'),
+         url('https://agar3s-assets.s3.amazonaws.com/dwarfEmpire/assets/fonts/CalvertMTStd-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+html,
+body {
+	margin: 0 auto;
+	box-sizing: border-box;
+	background-color: #141414;
+	height: 99%;
+	padding: 0;
+	font-family: 'CalvertMT';
+}
+
+.dg.ac {
+	top: 50px !important;
+}
+
+.dg main a {
+	margin: 0;
+}
+h1, h2 {
+	position: absolute;
+	left: -99999px;
+}
+h2 {
+	font-family: 'CalvertMT-Bold'
+}
+
+.all {
+	display: flex;
+	flex-direction: column;
+    color: white;
+    margin: 10px;
+
+}
+
+.row, .header {
+	display: flex;
+	border: 1px solid #ffb200;
+	padding: 10px 0;
+}
+.header {
+	color: #ffb200;
+	font-size: 22px;
+}
+
+.cell {
+	display: flex;
+	width: 12%;
+	margin: 0 auto;
+}
+
+.cell-large {
+	display: flex;
+	width: 52%;
+}
+.business {
+	width: 11%;
+}
+.business img {
+	max-width: 32px;
+}
+
+img.logo {
+	display: block;
+    margin: 0 auto;
+    width: 200px;
+}
+
+a {
+	font-size: 22px !important;
+    display: block;
+    margin: 0 auto;
+    /* width: 10%; */
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-align: center;
+    color: #ffb200;
+}
+
+@media screen and (max-width: 500px) {
+	* {
+		font-size: 12px;
+
+	}
+	.cell-large {
+		display: none;
+	}
+	.cell:last-child {
+		width: 50%;
+	}
+
+}

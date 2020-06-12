@@ -1,0 +1,56 @@
+DOCTYPE html
+html
+
+	head
+		title Dwarf Empire - Ranking
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no')
+
+		link(rel="shortcut icon" href="https://agar3s-assets.s3.amazonaws.com/dwarfEmpire/assets/favicon.ico" type="image/x-icon")
+		link(rel="icon" href="https://agar3s-assets.s3.amazonaws.com/dwarfEmpire/assets/favicon.ico" type="image/x-icon")
+		link(rel='stylesheet', type='text/css', href='/style.css')
+	body
+
+		img.logo(src='https://agar3s-assets.s3.amazonaws.com/dwarfEmpire/assets/dwarf_empire_title.png')
+		a(href='/') Play
+		.all
+			.header
+				.cell Name
+				.cell Level
+				.cell Title
+				.cell Money
+				.cell-large
+					.business
+						img(src='https://agar3s-assets.s3.amazonaws.com/dwarfEmpire/assets/sprites/business/mines.png')
+					.business
+						img(src='https://agar3s-assets.s3.amazonaws.com/dwarfEmpire/assets/sprites/business/drill.png')
+					.business
+						img(src='https://agar3s-assets.s3.amazonaws.com/dwarfEmpire/assets/sprites/business/tavern.png')
+					.business
+						img(src='https://agar3s-assets.s3.amazonaws.com/dwarfEmpire/assets/sprites/business/forge.png')
+					.business
+						img(src='https://agar3s-assets.s3.amazonaws.com/dwarfEmpire/assets/sprites/business/jewelery.png')
+					.business
+						img(src='https://agar3s-assets.s3.amazonaws.com/dwarfEmpire/assets/sprites/business/trade.png')
+					.business
+						img(src='https://agar3s-assets.s3.amazonaws.com/dwarfEmpire/assets/sprites/business/castle.png')
+					.business
+						img(src='https://agar3s-assets.s3.amazonaws.com/dwarfEmpire/assets/sprites/business/army.png')
+					.business
+						img(src='https://agar3s-assets.s3.amazonaws.com/dwarfEmpire/assets/sprites/business/quest.png')
+			each g in games
+				.row
+					.cell= g.character.name
+					.cell= g.character.level
+					.cell= g.character.title
+					.cell= g.game.money
+					.cell-large
+						.business= g.businesses.MINER.investments
+						.business= g.businesses.DRILL.investments
+						.business= g.businesses.TAVERN.investments
+						.business= g.businesses.FORGE.investments
+						.business= g.businesses.JEWELERY.investments
+						.business= g.businesses.TRADE.investments
+						.business= g.businesses.CASTLE.investments
+						.business= g.businesses.ARMY.investments
+						.business= g.businesses.QUEST.investments

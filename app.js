@@ -26,12 +26,20 @@ const connectRetry = () => {
 connectRetry()
 
 app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'pug');
 
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+app.use(express.static(path.join(__dirname, 'public')))
 
 let game = {}
+
+app.get('/games', async (req, res) => {
+  let games = await Game.find({})
+  games = games.sort((b, a) => a.game.money - b.game.money)
+  res.render('games', { games })
+})
 
 app.post('/games', async (req, res) => {
   let { body } = req
@@ -66,9 +74,14 @@ app.get('/games/:id', async (req, res) => {
   }
 })
 
+app.get('/', (req, res) => {
+  res.render('game')
+})
+
 
 
 app.use((err, req, res, next) => {
+  console.error(err)
   res.json({msg: 'w'})
 })
 
