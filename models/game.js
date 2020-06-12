@@ -7,6 +7,7 @@ const GameSchema = new Schema({
   id: { type: String, required: true, unique: true },
   game: { type: Object },
   tutorial: { type: Object },
+  character: { type: Object },
   businesses: { type: Object },
 })
 
