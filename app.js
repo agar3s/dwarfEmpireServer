@@ -37,7 +37,7 @@ let game = {}
 
 app.get('/games', async (req, res) => {
   let games = await Game.find({})
-  games = games.sort((b, a) => a.game.money - b.game.money)
+  games = games.sort((b, a) => (a.game.money + a.game.moneySpent) - (b.game.money+ b.game.moneySpent))
   res.render('games', { games })
 })
 
@@ -47,6 +47,8 @@ app.post('/games', async (req, res) => {
   if (game) {
     game.businesses = body.businesses
     game.game = body.game
+    game.character = body.character
+    game.tutorial = body.tutorial
   } else {
     game = new Game(body)
   }
