@@ -61,8 +61,13 @@ h2 {
 
 .cell {
 	display: flex;
-	width: 12%;
+	width: 25%;
 	margin: 0 auto;
+	line-height: 18px;
+}
+
+.level {
+	width: 5%;
 }
 
 .cell-large {
@@ -86,7 +91,6 @@ a {
 	font-size: 22px !important;
     display: block;
     margin: 0 auto;
-    /* width: 10%; */
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 800;
@@ -94,16 +98,20 @@ a {
     color: #ffb200;
 }
 
+.me {
+	background: #993300;
+}
+
 @media screen and (max-width: 500px) {
 	* {
 		font-size: 12px;
 
 	}
+	.level {
+		width: 10%;
+	}
 	.cell-large {
 		display: none;
-	}
-	.cell:last-child {
-		width: 50%;
 	}
 
 }

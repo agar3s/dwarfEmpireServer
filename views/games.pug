@@ -16,9 +16,9 @@ html
 		.all
 			.header
 				.cell Name
-				.cell Level
+				.cell.level Level
 				.cell Title
-				.cell Money
+				.cell Money Generated
 				.cell-large
 					.business
 						img(src='https://agar3s-assets.s3.amazonaws.com/dwarfEmpire/assets/sprites/business/mines.png')
@@ -39,11 +39,11 @@ html
 					.business
 						img(src='https://agar3s-assets.s3.amazonaws.com/dwarfEmpire/assets/sprites/business/quest.png')
 			each g in games
-				.row
+				.row(data-id=g.id)
 					.cell= g.character.name
-					.cell= g.character.level
+					.cell.level= g.character.level
 					.cell= g.character.title
-					.cell= g.game.money
+					.cell(data-money=(g.game.money+g.game.moneySpent))= g.game.money+g.game.moneySpent
 					.cell-large
 						.business= g.businesses.MINER.investments
 						.business= g.businesses.DRILL.investments
@@ -54,3 +54,5 @@ html
 						.business= g.businesses.CASTLE.investments
 						.business= g.businesses.ARMY.investments
 						.business= g.businesses.QUEST.investments
+
+		script(src='/games.js')
